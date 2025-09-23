@@ -1,0 +1,7 @@
+aiohttp
+aiodns
+async-timeout
+feedparser
+beautifulsoup4
+psycopg2-binary
+python-dateutil

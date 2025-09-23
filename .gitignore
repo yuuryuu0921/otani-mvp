@@ -1,0 +1,24 @@
+# ---- Python ----
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+.env
+venv/
+.envrc
+
+# ---- Node.js / Next.js ----
+node_modules/
+.next/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ---- Editor ----
+.vscode/
+.idea/
+.DS_Store
