@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 
 // ✅ 記事データ取得 (サーバーサイド)
 async function getArticles(): Promise<Article[]> {
-  const res = await fetch("https://otani-matome.com:3000/api/articles/otani?limit=20", {
+  const res = await fetch("https://otani-matome.com/api/articles/otani?limit=20", {
     cache: "no-store",
   });
   const data = await res.json();
