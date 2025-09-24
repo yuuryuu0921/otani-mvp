@@ -11,7 +11,7 @@ type Article = {
 
 export async function GET() {
   // 記事を取得 (最新50件)
-  const res = await fetch("http://localhost:8000/api/articles?limit=50", {
+  const res = await fetch("http://otani-matome.com/api/articles?limit=50", {
     cache: "no-store",
   });
   const articles: Article[] = await res.json();
@@ -21,7 +21,7 @@ export async function GET() {
 <rss version="2.0">
 <channel>
   <title>大谷翔平ニュースフィード</title>
-  <link>http://localhost:3000/</link>
+  <link>http://otani-matome.com/</link>
   <description>大谷翔平に関する最新ニュースを配信します。</description>
   <language>ja</language>
   ${articles
