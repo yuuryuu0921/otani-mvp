@@ -59,7 +59,7 @@ export default function ArticlesBySourcePage() {
         name: "Shohei Ohtani News",
         logo: {
           "@type": "ImageObject",
-          url: "https://your-domain.com/logo.png", // ロゴ画像を用意してください
+          url: "https://otani-matome.com/logo.png", // ロゴ画像を用意してください
         },
       },
     })),

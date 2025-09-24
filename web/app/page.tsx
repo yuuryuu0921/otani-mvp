@@ -1,5 +1,6 @@
 // app/page.tsx
 import { Metadata } from "next";
+import Link from "next/link"; // ← 追加
 
 export const metadata: Metadata = {
   title: "Shohei Ohtani News | 大谷翔平まとめサイト",
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
     title: "Shohei Ohtani News | 大谷翔平まとめサイト",
     description:
       "大谷翔平に関する最新ニュースや成績速報、海外メディアの反応をまとめています。",
-    url: "https://yourdomain.com", // ←独自ドメインに変更
+    url: "https://otani-matome.com",
     siteName: "Shohei Ohtani News",
     locale: "ja_JP",
     type: "website",
@@ -22,33 +23,31 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  // ✅ JSON-LD (WebSite + Organization)
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Shohei Ohtani News",
-    url: "https://yourdomain.com", // ← 独自ドメインに置き換え
+    url: "https://otani-matome.com",
     description:
       "大谷翔平に関するニュース・成績・移籍情報をまとめたポータルサイト。",
     publisher: {
       "@type": "Organization",
       name: "Shohei Ohtani News 運営事務局",
-      url: "https://yourdomain.com",
+      url: "https://otani-matome.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://yourdomain.com/logo.png", // ← サイトロゴを配置推奨
+        url: "https://otani-matome.com/logo.png",
       },
     },
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://yourdomain.com/search?q={search_term_string}",
+      target: "https://otani-matome.com/search?q={search_term_string}",
       "query-input": "required name=search_term_string",
     },
   };
 
   return (
     <main className="p-6 max-w-3xl mx-auto">
-      {/* ✅ JSON-LD を埋め込み */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -65,7 +64,7 @@ export default function HomePage() {
       </p>
 
       <div className="grid gap-6 sm:grid-cols-2">
-        <a
+        <Link
           href="/articles/otani"
           className="block border rounded-lg p-6 shadow hover:shadow-md hover:bg-gray-50 transition"
         >
@@ -73,17 +72,15 @@ export default function HomePage() {
           <p className="text-gray-600">
             大谷翔平に関する最新の記事をまとめています。
           </p>
-        </a>
+        </Link>
 
-        <a
+        <Link
           href="/articles/all"
           className="block border rounded-lg p-6 shadow hover:shadow-md hover:bg-gray-50 transition"
         >
           <h2 className="text-xl font-semibold mb-2">📚 全記事一覧</h2>
-          <p className="text-gray-600">
-            記事を網羅的にチェック。
-          </p>
-        </a>
+          <p className="text-gray-600">記事を網羅的にチェック。</p>
+        </Link>
       </div>
     </main>
   );

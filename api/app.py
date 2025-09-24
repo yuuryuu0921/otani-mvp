@@ -12,7 +12,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://192.168.11.8:3000"],  # Next.js開発サーバーのURL
+    allow_origins=["http://localhost:3000", "http://192.168.11.8:3000",
+                    "http://otani-matome.com:3000"],  # Next.js開発サーバーのURL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -131,7 +132,7 @@ def sitemap():
     # 固定ページ (トップ)
     sitemap_xml += f"""
     <url>
-      <loc>https://your-domain.com/</loc>
+      <loc>https://otani-matome.com/</loc>
       <lastmod>{datetime.utcnow().date()}</lastmod>
       <changefreq>daily</changefreq>
       <priority>1.0</priority>
@@ -175,7 +176,7 @@ def rss():
     rss_xml += """<rss version="2.0"><channel>\n"""
     rss_xml += """
       <title>大谷翔平ニュースまとめ</title>
-      <link>https://your-domain.com/</link>
+      <link>https://otani-matome.com/</link>
       <description>大谷翔平に関する最新ニュースをまとめています</description>
       <language>ja</language>
     """
