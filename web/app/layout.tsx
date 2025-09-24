@@ -15,6 +15,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
+      <head>
+        {/* ✅ Google AdSense */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4936262350419998"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      </head>
       <body className="flex flex-col min-h-screen">
         {/* ====== 構造化データ (JSON-LD) ====== */}
         <Script
@@ -37,7 +46,7 @@ export default function RootLayout({
                 url: "https://your-domain.com/",
                 logo: {
                   "@type": "ImageObject",
-                  url: "https://your-domain.com/logo.png", // ロゴ画像を用意すると効果UP
+                  url: "https://your-domain.com/logo.png",
                 },
               },
             }),
@@ -45,6 +54,7 @@ export default function RootLayout({
         />
 
         {/* ====== Header ====== */}
+        ...
         <header className="bg-white shadow-md">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center py-4">
