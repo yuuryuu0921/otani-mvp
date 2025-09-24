@@ -15,7 +15,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <head>
+      <head />
+      <body>
         {/* ✅ Google AdSense */}
         <Script
           async
@@ -23,7 +24,8 @@ export default function RootLayout({
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
-      </head>
+        {children}
+      </body>
       <body className="flex flex-col min-h-screen">
         {/* ====== 構造化データ (JSON-LD) ====== */}
         <Script
