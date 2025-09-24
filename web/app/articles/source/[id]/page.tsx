@@ -2,6 +2,11 @@
 import { Metadata } from "next";
 import SourceArticles from "./SourceArticles";
 
+type Source = {
+  id: number;
+  name: string;
+};
+
 type Article = {
   id: number;
   title: string | null;
@@ -10,14 +15,16 @@ type Article = {
   published_at: string | null;
   source_name: string | null;
   thumbnail: string | null;
-  source_icon: string | null; // ← 追加
+  source_icon: string | null;
 };
 
 // ✅ metadata
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: { params: { id: string } }
+): Promise<Metadata> {
   const res = await fetch(`http://localhost:8000/api/sources`, { cache: "no-store" });
-  const sources = await res.json();
-  const source = sources.find((s: any) => String(s.id) === params.id);
+  const sources: Source[] = await res.json();
+  const source = sources.find((s) => String(s.id) === params.id);
 
   const sourceName = source ? source.name : "不明な出典";
 
@@ -43,7 +50,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 async function getArticlesForJsonLd(sourceId: string): Promise<Article[]> {
   const res = await fetch(`http://localhost:8000/api/articles/by-source/${sourceId}?limit=20`, { cache: "no-store" });
   const data = await res.json();
-  return Array.isArray(data) ? data : [];
+  return Array.isArray(data) ? (data as Article[]) : [];
 }
 
 export default async function Page({ params }: { params: { id: string } }) {
