@@ -6,6 +6,8 @@ import Script from "next/script";
 export const metadata = {
   title: "Shohei Ohtani News | 大谷翔平まとめサイト",
   description: "大谷翔平に関するニュース・成績・移籍情報をまとめたポータルサイト。",
+  name:"google-adsense-account",
+  content:"ca-pub-4936262350419998"
 };
 
 export default function RootLayout({
@@ -15,16 +17,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <head />
-      <body className="flex flex-col min-h-screen">
-        {/* ✅ Google AdSense */}
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4936262350419998"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
+      <head>
+        {/* ✅ Google AdSense メタタグ */}
+        <meta
+          name="google-adsense-account"
+          content="ca-pub-4936262350419998"
         />
-
+      </head>
+      <body className="flex flex-col min-h-screen">
         {/* ====== 構造化データ (JSON-LD) ====== */}
         <Script
           id="website-jsonld"
