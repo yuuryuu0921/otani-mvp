@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head />
-      <body>
+      <body className="flex flex-col min-h-screen">
         {/* ✅ Google AdSense */}
         <Script
           async
@@ -24,9 +24,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
-        {children}
-      </body>
-      <body className="flex flex-col min-h-screen">
+
         {/* ====== 構造化データ (JSON-LD) ====== */}
         <Script
           id="website-jsonld"
@@ -56,7 +54,6 @@ export default function RootLayout({
         />
 
         {/* ====== Header ====== */}
-        ...
         <header className="bg-white shadow-md">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center py-4">
@@ -65,10 +62,16 @@ export default function RootLayout({
               </Link>
 
               <nav className="hidden md:flex gap-6 text-gray-700 font-medium">
-                <Link href="/articles/otani" className="hover:text-blue-600 transition">
+                <Link
+                  href="/articles/otani"
+                  className="hover:text-blue-600 transition"
+                >
                   大谷記事
                 </Link>
-                <Link href="/articles/all" className="hover:text-blue-600 transition">
+                <Link
+                  href="/articles/all"
+                  className="hover:text-blue-600 transition"
+                >
                   全記事
                 </Link>
                 <SourceDropdown />
@@ -108,7 +111,10 @@ export default function RootLayout({
                   </Link>
                 </li>
                 <li>
-                  <Link href="/disclaimer" className="hover:text-white transition">
+                  <Link
+                    href="/disclaimer"
+                    className="hover:text-white transition"
+                  >
                     免責事項
                   </Link>
                 </li>
