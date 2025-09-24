@@ -23,7 +23,7 @@ export default function AllArticlesPage() {
   const fetchArticles = async (pageNum: number) => {
     try {
       const res = await fetch(
-        `http://otani-matome.com/api/articles?limit=20&offset=${pageNum * 20}`
+        `https://otani-matome.com/api/articles?limit=20&offset=${pageNum * 20}`
       );
       const data = await res.json();
 

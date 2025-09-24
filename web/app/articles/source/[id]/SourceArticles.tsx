@@ -20,7 +20,7 @@ export default function SourceArticles({ sourceId }: { sourceId: string }) {
 
   useEffect(() => {
     if (!sourceId) return;
-    fetch(`http://localhost:8000/api/articles/by-source/${sourceId}?limit=20`)
+    fetch(`https://otani-matome.com/api/articles/by-source/${sourceId}?limit=20`)
       .then((res) => res.json())
       .then((data) => {
         setArticles(Array.isArray(data) ? data : []);
