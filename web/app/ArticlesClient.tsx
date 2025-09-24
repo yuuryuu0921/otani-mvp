@@ -19,7 +19,7 @@ export default function ArticlesClient() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/articles/otani?limit=20")
+    fetch("http://otani-matome.com:8000/api/articles/otani?limit=20")
       .then((res) => res.json())
       .then((data) => {
         setArticles(Array.isArray(data) ? data : []);
