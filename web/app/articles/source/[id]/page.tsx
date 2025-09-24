@@ -15,7 +15,7 @@ type Article = {
 
 // ✅ metadata
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const res = await fetch(`http://localhost:8000/api/sources`, { cache: "no-store" });
+  const res = await fetch(`http://otani-matome.com/api/sources`, { cache: "no-store" });
   const sources = await res.json();
   const source = sources.find((s: any) => String(s.id) === params.id);
 
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 
 // ✅ JSON-LD 生成
 async function getArticlesForJsonLd(sourceId: string): Promise<Article[]> {
-  const res = await fetch(`http://localhost:8000/api/articles/by-source/${sourceId}?limit=20`, { cache: "no-store" });
+  const res = await fetch(`http://otani-matome.com/api/articles/by-source/${sourceId}?limit=20`, { cache: "no-store" });
   const data = await res.json();
   return Array.isArray(data) ? data : [];
 }

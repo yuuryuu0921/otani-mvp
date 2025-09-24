@@ -22,7 +22,7 @@ export default function ArticlesBySourcePage() {
 
   useEffect(() => {
     if (!id) return;
-    fetch(`http://localhost:8000/api/articles/by-source/${id}?limit=20`)
+    fetch(`http://otani-matome.com/api/articles/by-source/${id}?limit=20`)
       .then((res) => res.json())
       .then((data) => {
         setArticles(Array.isArray(data) ? data : []);
