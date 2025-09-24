@@ -34,19 +34,19 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               name: "Shohei Ohtani News",
-              url: "https://your-domain.com/",
+              url: "https://otani-matome.com/",
               potentialAction: {
                 "@type": "SearchAction",
-                target: "https://your-domain.com/search?q={search_term_string}",
+                target: "https://otani-matome.com/search?q={search_term_string}",
                 "query-input": "required name=search_term_string",
               },
               publisher: {
                 "@type": "Organization",
                 name: "Shohei Ohtani News",
-                url: "https://your-domain.com/",
+                url: "https://otani-matome.com/",
                 logo: {
                   "@type": "ImageObject",
-                  url: "https://your-domain.com/logo.png",
+                  url: "https://otani-matome.com/logo.png",
                 },
               },
             }),
