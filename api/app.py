@@ -13,7 +13,8 @@ from fastapi.middleware.cors import CORSMiddleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000", "http://192.168.11.8:3000",
-                    "http://otani-matome.com:3000","http://otani-matome.com",],  # Next.js開発サーバーのURL
+                    "http://otani-matome.com:3000","http://otani-matome.com",
+                    "https://otani-matome.com"],  # Next.js開発サーバーのURL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
